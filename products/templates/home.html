@@ -1,6 +1,114 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Welcome to Our Signage Business</h1>
-<p>We provide high quality signage solutions across India.</p>
-<a href="/calculator/">👉 Calculate Your Cost</a>
+
+<style>
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 25px;
+    color: #555;
+}
+
+.hero .cta {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #25D366;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.coverage {
+    text-align: center;
+    font-size: 17px;
+    color: #444;
+}
+</style>
+
+<div class="hero">
+    <h1>Professional Signage Solutions</h1>
+    <p>
+        We design, manufacture, and install high-quality signage boards for shops,
+        offices, showrooms, and commercial spaces across India.
+    </p>
+
+    <a class="cta"
+       href="https://wa.me/919267990877?text=Hello%20I%20want%20a%20signage%20quotation"
+       target="_blank">
+        📞 Get Instant Quote on WhatsApp
+    </a>
+</div>
+
+<div class="section">
+    <h2>What We Do</h2>
+
+    <div class="features">
+        <div class="feature-box">
+            <h3>Custom Signage</h3>
+            <p>Glow sign boards, ACP boards, vinyl, flex, LED signage and more.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Transparent Pricing</h3>
+            <p>No hidden charges. Installation and transportation clearly informed.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Pan-India Service</h3>
+            <p>We undertake projects anywhere in India without city limitations.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Government & Private Work</h3>
+            <p>Experience with government organizations and private businesses.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section coverage">
+    <p>
+        📍 <strong>Service Coverage:</strong><br>
+        We have completed projects in multiple cities and states across India
+        and continue to serve clients nationwide based on project requirements.
+    </p>
+</div>
+
 {% endblock %}
