@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Our Work Gallery</h2>
+
+<div style="display:flex; flex-wrap:wrap; gap:15px;">
+    {% for img in images %}
+        <img src="{{ img.image.url }}" width="250" style="border-radius:8px;">
+    {% empty %}
+        <p>No images uploaded yet.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
