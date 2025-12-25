@@ -1,36 +1,85 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>Contact Us</h2>
+<style>
+.contact-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    font-size: 17px;
+    line-height: 1.7;
+}
 
-<p>
-For quotations, site visits, bulk orders, or any signage-related requirements,
-feel free to contact us using the details below.
-</p>
+.contact-container h2 {
+    margin-bottom: 15px;
+}
 
-<h3>Phone</h3>
-<p>
-📞 <strong>8076280311</strong><br>
-📞 <strong>(Alternate business number)</strong>
-</p>
+.contact-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
 
-<h3>WhatsApp</h3>
-<p>
-<a href="https://wa.me/918076280311" target="_blank">
-👉 Click here to chat on WhatsApp
-</a>
-</p>
+.contact-box p {
+    margin: 8px 0;
+}
 
-<h3>Service Locations</h3>
-<p>
-Prayagraj • Varanasi (Banaras) • Delhi • Other cities across India
-</p>
+.whatsapp-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: #25D366;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
 
-<h3>Important Note</h3>
-<ul>
-    <li>No hidden charges</li>
-    <li>GST not included in displayed prices</li>
-    <li>Installation & transportation charges applicable</li>
-</ul>
+<div class="contact-container">
+
+    <h2>Contact Us</h2>
+    <p>
+        For quotations, site visits, bulk orders, or any signage-related
+        requirements, feel free to contact us using the details below.
+    </p>
+
+    <div class="contact-box">
+        <h3>📞 Phone</h3>
+        <p>8076280311</p>
+        <p>9015849383 <small>(Alternate business number)</small></p>
+    </div>
+
+    <div class="contact-box">
+        <h3>💬 WhatsApp</h3>
+        <a class="whatsapp-link"
+           href="https://wa.me/919267990877?text=Hello%20I%20want%20a%20signage%20quotation"
+           target="_blank">
+            Click here to chat on WhatsApp
+        </a>
+    </div>
+
+    <div class="contact-box">
+        <h3>📍 Service Locations</h3>
+        <p>
+            We undertake signage projects across India.  
+            While we have experience working in cities such as Prayagraj,
+            Varanasi (Banaras), and Delhi, our services are not limited to
+            specific locations and are available nationwide based on
+            project requirements.
+        </p>
+    </div>
+
+    <div class="contact-box">
+        <h3>ℹ️ Important Note</h3>
+        <ul>
+            <li>No hidden charges</li>
+            <li>GST not included in displayed prices</li>
+            <li>Installation & transportation charges applicable</li>
+        </ul>
+    </div>
+
+</div>
 
 {% endblock %}
