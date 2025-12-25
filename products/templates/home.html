@@ -1,114 +1,229 @@
-{% extends 'base.html' %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JMS Signage | Professional Signage Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-.hero {
-    padding: 60px 20px;
-    text-align: center;
-    background: #f8f9fa;
-}
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 15px;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #222;
+        }
 
-.hero p {
-    font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto 25px;
-    color: #555;
-}
+        /* NAVBAR */
+        nav {
+            background: #111;
+            padding: 14px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.hero .cta {
-    display: inline-block;
-    padding: 12px 22px;
-    background: #25D366;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        nav .logo {
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+        }
 
-.section {
-    padding: 50px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            font-weight: 500;
+        }
 
-.section h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
+        nav a:hover {
+            color: #25D366;
+        }
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
+        /* HERO */
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+        }
 
-.feature-box {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    text-align: center;
-}
+        .hero h1 {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
 
-.coverage {
-    text-align: center;
-    font-size: 17px;
-    color: #444;
-}
-</style>
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            max-width: 820px;
+            margin: auto;
+            line-height: 1.6;
+        }
 
-<div class="hero">
-    <h1>Professional Signage Solutions</h1>
+        .cta-buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 8px;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #25D366;
+            color: #fff;
+            box-shadow: 0 12px 30px rgba(37,211,102,0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(37,211,102,0.5);
+        }
+
+        .btn-secondary {
+            background: #111;
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background: #333;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 50px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .service-card p {
+            font-size: 14.5px;
+            color: #555;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">JMS Signage</div>
+    <div>
+        <a href="/">Home</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/calculator/">Calculator</a>
+        <a href="/gallery/">Gallery</a>
+        <a href="/contact/">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Professional Signage Solutions Across India</h1>
     <p>
         We design, manufacture, and install high-quality signage boards for shops,
-        offices, showrooms, and commercial spaces across India.
+        showrooms, offices, and commercial spaces. Trusted by private businesses
+        and government-related organizations.
     </p>
 
-    <a class="cta"
-       href="https://wa.me/919267990877?text=Hello%20I%20want%20a%20signage%20quotation"
-       target="_blank">
-        📞 Get Instant Quote on WhatsApp
-    </a>
-</div>
+    <div class="cta-buttons">
+        <a class="btn btn-primary"
+           href="https://wa.me/919015849383"
+           target="_blank">
+            📞 Get Instant Quote on WhatsApp
+        </a>
 
-<div class="section">
+        <a class="btn btn-secondary" href="/calculator/">
+            Calculate Cost
+        </a>
+
+        <a class="btn btn-secondary" href="/pricing/">
+            View Pricing
+        </a>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
     <h2>What We Do</h2>
 
-    <div class="features">
-        <div class="feature-box">
+    <div class="services">
+        <div class="service-card">
             <h3>Custom Signage</h3>
-            <p>Glow sign boards, ACP boards, vinyl, flex, LED signage and more.</p>
+            <p>Glow sign boards, ACP boards, LED signage, flex boards and more.</p>
         </div>
 
-        <div class="feature-box">
+        <div class="service-card">
             <h3>Transparent Pricing</h3>
-            <p>No hidden charges. Installation and transportation clearly informed.</p>
+            <p>Clear pricing with no hidden charges. Honest estimates.</p>
         </div>
 
-        <div class="feature-box">
+        <div class="service-card">
             <h3>Pan-India Service</h3>
-            <p>We undertake projects anywhere in India without city limitations.</p>
+            <p>Projects executed across multiple cities and states in India.</p>
         </div>
 
-        <div class="feature-box">
+        <div class="service-card">
             <h3>Government & Private Work</h3>
-            <p>Experience with government organizations and private businesses.</p>
+            <p>Experience with government organizations and private clients.</p>
         </div>
     </div>
-</div>
+</section>
 
-<div class="section coverage">
-    <p>
-        📍 <strong>Service Coverage:</strong><br>
-        We have completed projects in multiple cities and states across India
-        and continue to serve clients nationwide based on project requirements.
-    </p>
-</div>
+<!-- FOOTER -->
+<footer>
+    © 2025 JMS Signage Business. All rights reserved.
+</footer>
 
-{% endblock %}
+</body>
+</html>

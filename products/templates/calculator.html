@@ -1,172 +1,92 @@
-{% extends 'base.html' %}
-{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cost Calculator | JMS Signage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-.calc-card{
-    max-width: 420px;
-    margin: 30px auto;
-    padding: 20px;
-    border-radius: 12px;
-    background: #ffffff;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+        }
 
-.calc-card h2{
-    text-align:center;
-    margin-bottom:20px;
-}
+        .box {
+            max-width: 450px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
 
-.calc-card label{
-    font-weight:600;
-}
+        h2 {
+            text-align: center;
+        }
 
-.calc-card input,
-.calc-card select{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    margin-bottom:15px;
-    border-radius:6px;
-    border:1px solid #ccc;
-}
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
 
-.calc-card button{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    background:#111;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-.calc-card button:hover{
-    background:#333;
-}
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
 
-.result{
-    margin-top:15px;
-    font-weight:600;
-    text-align:center;
-}
+<body>
 
-.whatsapp-box{
-    margin-top:15px;
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
+<div class="box">
+    <h2>Signage Cost Calculator</h2>
 
-.whatsapp-box a{
-    flex:1;
-    text-align:center;
-    padding:10px;
-    border-radius:8px;
-    background:#25D366;
-    color:white;
-    text-decoration:none;
-    font-weight:600;
-}
+    <input type="number" id="width" placeholder="Width (ft)">
+    <input type="number" id="height" placeholder="Height (ft)">
 
-.whatsapp-box a.secondary{
-    background:#128C7E;
-}
-</style>
+    <select id="type">
+        <option value="120">Flex Board</option>
+        <option value="400">ACP Board</option>
+        <option value="550">Glow Sign Board</option>
+        <option value="900">LED Letters</option>
+    </select>
 
-<div class="calc-card">
+    <button onclick="calculate()">Calculate</button>
 
-<h2>Signage Cost Calculator</h2>
-
-<label>Select Product</label>
-<select id="product" onchange="handleUnitChange()">
-    {% for p in products %}
-        <option value="{{ p.rate }}" data-unit="{{ p.unit }}">
-            {{ p.name }} – ₹{{ p.rate }}
-        </option>
-    {% endfor %}
-</select>
-
-<label>Width (inch)</label>
-<input id="w" type="number" placeholder="Enter width">
-
-<label>Height (inch)</label>
-<input id="h" type="number" placeholder="Enter height">
-
-<button onclick="calc()">Calculate</button>
-
-<div id="result" class="result"></div>
-
-<div class="whatsapp-box">
-    <a id="whatsappVimal" target="_blank"></a>
-    <a id="whatsappYash" target="_blank" class="secondary"></a>
-</div>
-
+    <div class="result" id="result"></div>
 </div>
 
 <script>
-function handleUnitChange(){
-    let sel = document.getElementById("product");
-    let unit = sel.options[sel.selectedIndex].dataset.unit;
-    let hInput = document.getElementById("h");
+function calculate() {
+    let w = parseFloat(width.value);
+    let h = parseFloat(height.value);
+    let rate = parseFloat(type.value);
 
-    if(unit === "inch"){
-        hInput.value = "";
-        hInput.disabled = true;
-        hInput.placeholder = "Not required";
-    } else {
-        hInput.disabled = false;
-        hInput.placeholder = "Enter height";
-    }
-}
-
-function calc(){
-    let sel = document.getElementById("product");
-    let rate = parseFloat(sel.value);
-    let unit = sel.options[sel.selectedIndex].dataset.unit;
-
-    let w = parseFloat(document.getElementById("w").value);
-    let h = parseFloat(document.getElementById("h").value);
-
-    if(!w){
-        alert("Enter width");
-        return;
-    }
-    if(unit !== "inch" && !h){
-        alert("Enter height");
+    if (!w || !h) {
+        alert("Enter valid dimensions");
         return;
     }
 
-    let total = 0;
-    if(unit === "inch") total = rate * w;
-    else if(unit === "sq_inch") total = rate * w * h;
-    else total = rate * (w * h / 144);
+    let area = w * h;
+    let cost = area * rate;
 
-    total = Math.round(total);
-
-    document.getElementById("result").innerText =
-        "Estimated Cost: ₹" + total +
-        " (No GST | Installation & Transport extra)";
-
-    let msg =
-        "Hello, I want signage.\n" +
-        "Product: " + sel.options[sel.selectedIndex].text + "\n" +
-        "Width: " + w + " inch\n" +
-        (unit !== "inch" ? ("Height: " + h + " inch\n") : "") +
-        "Estimated Cost: ₹" + total;
-
-    document.getElementById("whatsappVimal").innerText =
-        "WhatsApp Vimal Pandey";
-    document.getElementById("whatsappVimal").href =
-        "https://wa.me/919267990877?text=" + encodeURIComponent(msg);
-
-    document.getElementById("whatsappYash").innerText =
-        "WhatsApp Yash Pandey";
-    document.getElementById("whatsappYash").href =
-        "https://wa.me/918076280311?text=" + encodeURIComponent(msg);
+    document.getElementById("result").innerHTML =
+        "Estimated Area: " + area.toFixed(2) + " sq ft<br>" +
+        "Estimated Cost: ₹" + cost.toFixed(0);
 }
-
-handleUnitChange();
 </script>
 
-{% endblock %}
+</body>
+</html>
