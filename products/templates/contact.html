@@ -1,85 +1,141 @@
-{% extends 'base.html' %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | Signage Business</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-.contact-container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    font-size: 17px;
-    line-height: 1.7;
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f7f7f7;
+            color: #333;
+        }
 
-.contact-container h2 {
-    margin-bottom: 15px;
-}
+        nav {
+            background: #111;
+            padding: 12px 20px;
+        }
 
-.contact-box {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 25px;
-}
+        nav a {
+            color: #fff;
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-.contact-box p {
-    margin: 8px 0;
-}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-.whatsapp-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 16px;
-    background: #25D366;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-}
-</style>
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-<div class="contact-container">
+        h1 {
+            margin-top: 0;
+        }
 
-    <h2>Contact Us</h2>
+        h3 {
+            margin-bottom: 10px;
+            margin-top: 25px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        a.whatsapp {
+            color: #25D366;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a.whatsapp:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/gallery/">Gallery</a>
+    <a href="/calculator/">Calculator</a>
+    <a href="/contact/">Contact</a>
+</nav>
+
+<div class="container">
+    <h1>Contact Us</h1>
+
     <p>
         For quotations, site visits, bulk orders, or any signage-related
         requirements, feel free to contact us using the details below.
     </p>
 
-    <div class="contact-box">
-        <h3>📞 Phone</h3>
-        <p>8076280311</p>
-        <p>9015849383 <small>(Alternate business number)</small></p>
-    </div>
+    <!-- PHONE SECTION -->
+    <h3>📞 Phone</h3>
 
-    <div class="contact-box">
-        <h3>💬 WhatsApp</h3>
-        <a class="whatsapp-link"
-           href="https://wa.me/919267990877?text=Hello%20I%20want%20a%20signage%20quotation"
-           target="_blank">
+    <p>
+        <strong>Main Numbers:</strong><br>
+        📞 9015849383<br>
+        📞 9267990877
+    </p>
+
+    <p>
+        <strong>Alternate Business Number:</strong><br>
+        📞 8076280311
+    </p>
+
+    <!-- WHATSAPP -->
+    <h3>💬 WhatsApp</h3>
+    <p>
+        👉 <a class="whatsapp" href="https://wa.me/919015849383" target="_blank">
             Click here to chat on WhatsApp
         </a>
-    </div>
+    </p>
 
-    <div class="contact-box">
-        <h3>📍 Service Locations</h3>
-        <p>
-            We undertake signage projects across India.  
-            While we have experience working in cities such as Prayagraj,
-            Varanasi (Banaras), and Delhi, our services are not limited to
-            specific locations and are available nationwide based on
-            project requirements.
-        </p>
-    </div>
+    <!-- SERVICE LOCATIONS -->
+    <h3>📍 Service Locations</h3>
+    <p>
+        We provide signage services across India, including (but not limited to):
+    </p>
+    <p>
+        Prayagraj • Varanasi (Banaras) • Delhi • NCR • Uttar Pradesh •
+        Madhya Pradesh • Bihar • Rajasthan • Other cities across India
+    </p>
 
-    <div class="contact-box">
-        <h3>ℹ️ Important Note</h3>
-        <ul>
-            <li>No hidden charges</li>
-            <li>GST not included in displayed prices</li>
-            <li>Installation & transportation charges applicable</li>
-        </ul>
-    </div>
-
+    <!-- IMPORTANT NOTE -->
+    <h3>ℹ️ Important Note</h3>
+    <ul>
+        <li>No hidden charges</li>
+        <li>GST not included in displayed prices</li>
+        <li>Installation & transportation charges applicable</li>
+    </ul>
 </div>
 
-{% endblock %}
+<footer>
+    © Signage Business
+</footer>
+
+</body>
+</html>
