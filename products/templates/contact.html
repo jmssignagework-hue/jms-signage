@@ -9,23 +9,23 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
             background: #f7f7f7;
-            color: #333;
         }
 
-        nav {
+        .navbar {
             background: #111;
             padding: 12px 20px;
         }
 
-        nav a {
+        .navbar a {
             color: #fff;
             margin-right: 20px;
             text-decoration: none;
             font-weight: 500;
         }
 
-        nav a:hover {
+        .navbar a:hover {
             text-decoration: underline;
         }
 
@@ -35,34 +35,36 @@
             background: #fff;
             padding: 30px;
             border-radius: 6px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         h1 {
-            margin-top: 0;
+            margin-bottom: 10px;
         }
 
         h3 {
-            margin-bottom: 10px;
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         p {
             line-height: 1.6;
         }
 
-        a.whatsapp {
-            color: #25D366;
+        ul {
+            margin-top: 10px;
+        }
+
+        .phone p {
+            margin: 6px 0;
+        }
+
+        .whatsapp a {
+            color: #0a8f08;
             font-weight: bold;
             text-decoration: none;
         }
 
-        a.whatsapp:hover {
+        .whatsapp a:hover {
             text-decoration: underline;
-        }
-
-        ul {
-            padding-left: 18px;
         }
 
         footer {
@@ -73,69 +75,80 @@
         }
     </style>
 </head>
-
 <body>
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/gallery/">Gallery</a>
-    <a href="/calculator/">Calculator</a>
-    <a href="/contact/">Contact</a>
-</nav>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/gallery/">Gallery</a>
+        <a href="/calculator/">Calculator</a>
+        <a href="/contact/">Contact</a>
+    </div>
 
-<div class="container">
-    <h1>Contact Us</h1>
+    <!-- CONTENT -->
+    <div class="container">
+        <h1>Contact Us</h1>
 
-    <p>
-        For quotations, site visits, bulk orders, or any signage-related
-        requirements, feel free to contact us using the details below.
-    </p>
+        <p>
+            For quotations, site visits, bulk orders, or any signage-related
+            requirements, feel free to contact us using the details below.
+        </p>
 
-    <!-- PHONE SECTION -->
-    <h3>📞 Phone</h3>
+        <!-- PHONE -->
+        <div class="phone">
+            <h3>📞 Phone</h3>
 
-    <p>
-        <strong>Main Numbers:</strong><br>
-        📞 9015849383<br>
-        📞 9267990877
-    </p>
+            <p>
+                <strong>Main Contact Numbers:</strong><br>
+                📞 9015849383<br>
+                📞 9267990877
+            </p>
 
-    <p>
-        <strong>Alternate Business Number:</strong><br>
-        📞 8076280311
-    </p>
+            <p>
+                <strong>Alternate Business Number:</strong><br>
+                📞 8076280311
+            </p>
+        </div>
 
-    <!-- WHATSAPP -->
-    <h3>💬 WhatsApp</h3>
-    <p>
-        👉 <a class="whatsapp" href="https://wa.me/919015849383" target="_blank">
-            Click here to chat on WhatsApp
-        </a>
-    </p>
+        <!-- WHATSAPP -->
+        <div class="whatsapp">
+            <h3>💬 WhatsApp</h3>
+            <p>
+                👉 <a href="https://wa.me/919015849383" target="_blank">
+                    Click here to chat on WhatsApp
+                </a>
+            </p>
+        </div>
 
-    <!-- SERVICE LOCATIONS -->
-    <h3>📍 Service Locations</h3>
-    <p>
-        We provide signage services across India, including (but not limited to):
-    </p>
-    <p>
-        Prayagraj • Varanasi (Banaras) • Delhi • NCR • Uttar Pradesh •
-        Madhya Pradesh • Bihar • Rajasthan • Other cities across India
-    </p>
+        <!-- SERVICE LOCATIONS -->
+        <div class="locations">
+            <h3>📍 Service Locations</h3>
+            <p>
+                We provide signage services across <strong>India</strong>,
+                including but not limited to:
+            </p>
+            <p>
+                Prayagraj • Varanasi (Banaras) • Delhi • NCR • Lucknow •
+                Kanpur • Noida • Ghaziabad • Jaipur • Indore • Bhopal •
+                Patna • Ranchi • and other cities across India
+            </p>
+        </div>
 
-    <!-- IMPORTANT NOTE -->
-    <h3>ℹ️ Important Note</h3>
-    <ul>
-        <li>No hidden charges</li>
-        <li>GST not included in displayed prices</li>
-        <li>Installation & transportation charges applicable</li>
-    </ul>
-</div>
+        <!-- IMPORTANT NOTE -->
+        <div class="note">
+            <h3>⚠️ Important Note</h3>
+            <ul>
+                <li>No hidden charges</li>
+                <li>GST not included in displayed prices</li>
+                <li>Installation & transportation charges applicable</li>
+            </ul>
+        </div>
 
-<footer>
-    © Signage Business
-</footer>
+        <footer>
+            © Signage Business
+        </footer>
+    </div>
 
 </body>
 </html>
